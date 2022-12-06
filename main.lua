@@ -4,12 +4,6 @@
     
     Quests support from Lv. 1 to Lv. 110 (Including Saku Boss)
 ]]--
---[[
-    Made by Makkara#1547
-    Don't expect this script to be good; the game is bad and i was just bored.
-    
-    Quests support from Lv. 1 to Lv. 110 (Including Saku Boss)
-]]--
 
 local plr = game:GetService'Players'.LocalPlayer
 local mobs = workspace.Living.Mobs
