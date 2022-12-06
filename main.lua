@@ -4,6 +4,12 @@
     
     Quests support from Lv. 1 to Lv. 110 (Including Saku Boss)
 ]]--
+--[[
+    Made by Makkara#1547
+    Don't expect this script to be good; the game is bad and i was just bored.
+    
+    Quests support from Lv. 1 to Lv. 110 (Including Saku Boss)
+]]--
 
 local plr = game:GetService'Players'.LocalPlayer
 local mobs = workspace.Living.Mobs
@@ -205,7 +211,7 @@ local function getClosestMob(name)
 	end
 	local a = math.huge
 	local b = nil
-	for i,v in mobs:GetChildren() do
+	for i,v in pairs(mobs:GetChildren()) do
 		if v.Name == name then
 			local dist = (plr.Character.HumanoidRootPart.Position - v:GetPivot().p).Magnitude
 			if dist < a then
@@ -267,7 +273,7 @@ local function getBestQuestForLevel()
 		name = "Bandits",
 		lvlReq = 1,
 	}
-	for name, tabl in quests do
+	for name, tabl in pairs(quests) do
 		if myLevel > tabl.lvlReq and tabl.lvlReq > chosenQuest.lvlReq then
 			if (name:find("BOSS") and ignoreBossQuests) then
 				continue
@@ -331,7 +337,7 @@ tab1:dropdown("Selected Quest", false, {
 		local myLevel = plr.PlayerGui.UI.Tabs.MenuButton.Level.Text:gsub("LV. ", "")
 		myLevel = tonumber(myLevel)
 
-		for name, tabl in quests do
+		for name, tabl in pairs(quests) do
 			if myLevel > tabl.lvlReq then
 				table.insert(questNames, {Name = name})
 			end
